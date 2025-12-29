@@ -28,7 +28,7 @@ app.use(
       servers: [
         {
           url: `${req.protocol}://${req.get("host")}`,
-          description: "Dynamic server based on current request",
+          description: "Dynamic URL based on current request",
         },
         ...(fdxSpec.servers || []),
       ],
