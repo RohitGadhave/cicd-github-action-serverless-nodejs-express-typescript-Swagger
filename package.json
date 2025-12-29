@@ -10,8 +10,8 @@
     "start": "node --env-file=.env dist/server.js",
     "prepare": "husky",
     "precommit": "lint-staged",
-    "lint:fix": "npx prettier src/* --write",
-    "lint": "npx prettier src/* --check --debug-check",
+    "lint:fix": "npx prettier ./src/* --write",
+    "lint": "npx prettier ./src/* --check --debug-check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -45,7 +45,7 @@
   },
   "lint-staged": {
     "**/*": [
-      "prettier ./ --check --ignore-unknown --debug-check"
+      "prettier ./src/* --check --ignore-unknown --debug-check"
     ]
   },
   "husky": {

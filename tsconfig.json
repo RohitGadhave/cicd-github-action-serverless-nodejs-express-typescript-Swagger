@@ -2,23 +2,22 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
+    "baseUrl": "./src",
+    "paths": {
+      "@routes/*": ["routes/*"],
+      "@controllers/*": ["controllers/*"],
+      "@utils/*": ["utils/*"]
+    },
     "module": "nodenext",
     "target": "esnext",
     "types": [],
-    // For nodejs:
     "lib": [
       "ESNext",
       "DOM"
     ],
-    // "types": ["node"],
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-
-    // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
