@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction} from "express";
+import express, { Request, Response, NextFunction } from "express";
 import path from "node:path";
 
 import swaggerUi from "swagger-ui-express";
@@ -19,18 +19,22 @@ app.use(appRoutes);
 
 // app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(fdxSpec));
 
-app.use("/api-docs", swaggerUi.serve, (req: Request, res: Response, next: NextFunction) => {
-  const dynamicSpec = {
-    ...fdxSpec,
-    servers: [
-      {
-        url: `${req.protocol}://${req.get("host")}`,
-        description: "Dynamic server based on current request"
-      },
-      ...(fdxSpec.servers || [])
-    ]
-  };
-  return swaggerUi.setup(dynamicSpec)(req, res, next);
-});
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  (req: Request, res: Response, next: NextFunction) => {
+    const dynamicSpec = {
+      ...fdxSpec,
+      servers: [
+        {
+          url: `${req.protocol}://${req.get("host")}`,
+          description: "Dynamic server based on current request",
+        },
+        ...(fdxSpec.servers || []),
+      ],
+    };
+    return swaggerUi.setup(dynamicSpec)(req, res, next);
+  },
+);
 
 export default app;

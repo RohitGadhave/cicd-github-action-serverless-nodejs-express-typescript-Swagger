@@ -10,27 +10,26 @@ servers:
   - url: http://staging-api.example.com
     description: Optional server description, e.g. Internal staging server for testing
 
-
 paths:
   /ping:
     get:
       summary: Returns time and status
       responses:
         "200": # status code
-          description: message and current time 
+          description: message and current time
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Ping'
+                $ref: "#/components/schemas/Ping"
 components:
   schemas:
     Ping:
       type: object
-      properties: 
-        working: 
+      properties:
+        working:
           type: string
           example: "working..."
         time:
-          type: string 
-          format: date-time 
+          type: string
+          format: date-time
           example: "2025-12-29T17:45:00Z"
