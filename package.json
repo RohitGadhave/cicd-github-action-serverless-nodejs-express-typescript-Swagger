@@ -29,7 +29,9 @@
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "serverless": "^4.29.0",
+    "graphql": "^16.12.0",
+    "graphql-http": "^1.22.4",
+    "serverless": "^4.29.3",
     "serverless-offline": "^14.4.0",
     "swagger-ui-express": "^5.0.1",
     "yamljs": "^0.3.0"
